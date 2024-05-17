@@ -37,7 +37,7 @@ UPC, en Castelldefels**.
 
 
   <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">
-    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="Vista previa del video">
+    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="Vista previa del video">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="Vista previa del video">
   </a>
 
 
