@@ -3,6 +3,7 @@ from Dron import Dron
 from tkinter import Canvas
 from tkinter import ttk
 from tkinter import messagebox
+from BodyFrame import BodyFrameClass
 
 
 def connect ():
@@ -65,8 +66,19 @@ def land():
 def land_callback():
     messagebox.showinfo("showinfo", "El dron va a aterrizar")
 
+
 def new_function():
     pass
+
+def show_body_control():
+    global dron
+    map_window = tk.Toplevel()
+    map_window.title("Control por poses")
+    map_window.geometry("630x420")
+
+    body_frame_class = BodyFrameClass(dron)
+    body_frame = body_frame_class.buildFrame(map_window)
+    body_frame.pack(fill="both", expand=True)
 
 
 # ================= DASHBOARD INICIAL =================
@@ -184,6 +196,9 @@ def crear_ventana():
                         command=lambda: go("SouthEast"))
     SEBtn.grid(row=2, column=2, padx=2, pady=2, sticky=tk.N + tk.S + tk.E + tk.W)
 
+    # ===== FRAME POSES=====
+    PoseButton = tk.Button(controlFrame, text="Mostrar frame de poses", bg="dark orange", command=show_body_control)
+    PoseButton.grid(row=9, column=0, columnspan=4, padx=5, pady=10, sticky=tk.N + tk.S + tk.E + tk.W)
 
     # ================ FRAME ADICIONAL (AÑADIR FUNCIONALIDADES EXTRA/RETOS) ================
 
