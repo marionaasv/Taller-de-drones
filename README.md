@@ -35,11 +35,11 @@ cual tendrás que modificar solo un par de líneas de tu código). Naturalmente,
 taller se realiza de forma presencial en las instalaciones **del campus del Baix Llobregat de la
 UPC, en Castelldefels**.
 
-<div align="center">
+
   <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">
-    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="300" alt="Vista previa del video">
+    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="Vista previa del video">
   </a>
-</div>
+
 
 
 
