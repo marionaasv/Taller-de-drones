@@ -17,6 +17,14 @@ class MapFrameClass:
         self.vertex_count = 0
         self.geofencePoints = []
 
+        # Parámetros para poder establecer WP/ realizar GO TO
+        self.destination_WP = None
+        self.reach_WP = False
+        self.activate_goto = False
+
+        # Parámetros para establecer el trazado del dron
+        self.trace = False
+        self.last_position = None  # actualizar trazado
 
         # Iconos del dron y markers
         self.drone_marker = None
@@ -87,13 +95,13 @@ class MapFrameClass:
         self.nav_frame.columnconfigure(0, weight=1)
         self.nav_frame.columnconfigure(1, weight=1)
 
-        self.Button3 = tk.Button(self.nav_frame, text="Establecer WP", bg="light grey", fg="white", command=self.new_function)
+        self.Button3 = tk.Button(self.nav_frame, text="Establecer WP", bg="black", fg="white", command=self.enable_wp_setting)
         self.Button3.grid(row=0, column=0, padx=5, pady=3, sticky="nesw")
 
-        self.Button4 = tk.Button(self.nav_frame, text="GO TO WP", bg="light grey", fg="white", command=self.new_function)
+        self.Button4 = tk.Button(self.nav_frame, text="GO TO WP", bg="black", fg="white", command=self.start_goto)
         self.Button4.grid(row=0, column=1, padx=5, pady=3, sticky="nesw")
 
-        self.Button5 = tk.Button(self.nav_frame, text="Mostrar trazado", bg="light grey", fg="white", command=self.new_function)
+        self.Button5 = tk.Button(self.nav_frame, text="Mostrar trazado", bg="black", fg="white", command=self.set_trace)
         self.Button5.grid(row=1, column=0, padx=5, pady=3, sticky="nesw")
 
         self.Button9 = tk.Button(self.nav_frame, text="Mostrar dron", bg="black", fg="white", command=self.set_drone_marker)
@@ -124,6 +132,11 @@ class MapFrameClass:
                 polygon_geofence = self.map_widget.set_path([
                     (point['lat'], point['lon']) for point in last_two_points])
 
+        elif self.reach_WP:
+            marker = self.map_widget.set_marker(coords[0], coords[1], text="", icon=self.marker_icon, icon_anchor="center")
+            self.destination_WP = coords
+            print(f"Navigate to reach WP: {self.destination_WP}")
+
 
     def GeoFence(self):
         try:
@@ -144,6 +157,32 @@ class MapFrameClass:
             messagebox.showerror("Error", f"Error al establecer el geo fence: {str(e)}")
 
 
+    # ======== ESTABLECER WP Y REALIZAR GO TO ========
+    def enable_wp_setting(self):
+        self.reach_WP = not self.reach_WP
+        if self.reach_WP:
+            self.Button3.config(text="Desactivar 'establecer WP'")
+            messagebox.showinfo("Establecer WP", "Clic derecho en el mapa para seleccionar el WP de destino.")
+            self.map_widget.add_right_click_menu_command(label="Add Marker", command=self.add_marker_event,
+                                                             pass_coords=True)
+
+        if not self.reach_WP:
+            self.Button3.config(text="Establecer WP")
+            self.remove_right_click_menu_command(label="Add Marker")
+
+
+    def remove_right_click_menu_command(self, label):
+        self.map_widget.right_click_menu_commands = [cmd for cmd in self.map_widget.right_click_menu_commands if cmd['label'] != label]
+
+
+    def start_goto(self):
+        self.activate_goto = True
+        if self.activate_goto and self.destination_WP:
+            print(f"Destionation WP coordinates: {self.destination_WP}")
+            self.dron.goto(float(self.destination_WP[0]), float(self.destination_WP[1]), float(8), blocking=False)
+
+
+
  # ======= ESTABLECER ICONO DRON (MARKER) =======
     def set_drone_marker(self):
         self.marker = not self.marker
@@ -160,6 +199,7 @@ class MapFrameClass:
                 self.map_widget.delete(self.drone_marker)
                 self.drone_marker = None
 
+            if not self.trace:
                 self.dron.stop_sending_telemetry_info()
 
 
@@ -168,6 +208,10 @@ class MapFrameClass:
 
 
     def update_drone_and_trace(self, lat, lon):
+        if self.trace:
+            if self.last_position:
+                self.map_widget.set_path([self.last_position, (lat, lon)], width=5)
+            self.last_position = (lat, lon)
 
         if self.marker:
             if self.drone_marker:
@@ -178,6 +222,16 @@ class MapFrameClass:
                                                            text="", text_color="blue",
                                                            icon=self.photo, icon_anchor="center")
 
-    def new_function(self):
-        pass
+    # ======= MARCAR TRAZADO DEL DRON =======
+    def set_trace(self):
+        self.trace = not self.trace
+        if self.trace:
+            if not self.dron.sendTelemetryInfo:
+                self.dron.send_telemetry_info(self.process_telemetry_info, self.update_drone_and_trace)
+
+        else:
+            self.map_widget.delete_all_path()
+            self.last_position = []
+            if not self.marker:
+                self.dron.stop_sending_telemetry_info()
 
