@@ -3,6 +3,7 @@ from Dron import Dron
 from tkinter import Canvas
 from tkinter import ttk
 from tkinter import messagebox
+from MapFrame import MapFrameClass
 
 
 def connect ():
@@ -57,6 +58,18 @@ def go(direction):
 def stopGo():
     global dron
     dron.stopGo()
+
+def showmap():
+    global dron
+
+    map_window = tk.Toplevel()
+    map_window.title("Map Display")
+    map_window.geometry("820x620")
+
+    map_frame_class = MapFrameClass(dron)
+    map_frame = map_frame_class.buildFrame(map_window)
+    map_frame.pack(fill="both", expand=True)
+
 
 def land():
     global dron
@@ -184,6 +197,9 @@ def crear_ventana():
                         command=lambda: go("SouthEast"))
     SEBtn.grid(row=2, column=2, padx=2, pady=2, sticky=tk.N + tk.S + tk.E + tk.W)
 
+    # ================ FRAME MAPA ================
+    MapButton = tk.Button(controlFrame, text="Mostrar mapa", bg="dark orange", command=showmap)
+    MapButton.grid(row=8, column=0, columnspan=4, padx=5, pady=10, sticky=tk.N + tk.S + tk.E + tk.W)
 
     # ================ FRAME ADICIONAL (AÑADIR FUNCIONALIDADES EXTRA/RETOS) ================
 
