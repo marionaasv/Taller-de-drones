@@ -44,3 +44,5 @@ UPC, en Castelldefels**.
 
 
 ## 2. Etapas del taller
+
+El taller está organizado en 4 etapas, que se describen a continuación:
