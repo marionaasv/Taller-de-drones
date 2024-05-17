@@ -35,4 +35,6 @@ cual tendrás que modificar solo un par de líneas de tu código). Naturalmente,
 taller se realiza de forma presencial en las instalaciones **del campus del Baix Llobregat de la
 UPC, en Castelldefels**.
 
+[![Vista previa del video](https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg)](https://www.youtube.com/watch?v=P_NCKA_3-PQ)
+
 ## 2. Etapas del taller
