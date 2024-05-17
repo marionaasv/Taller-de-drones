@@ -25,10 +25,10 @@ def arm (button):
 
 
 def takeoff ():
-    global dron
-    alt = float(8)
+    global dron, alt_entry
+    alt = float(alt_entry.get())
     print(f"Selected TO altitude: {alt} m")
-    dron.takeOff (alt, blocking=False,  callback=informar, params='VOLANDO')
+    dron.takeOff(alt, blocking=False, callback=informar, params='VOLANDO')
 
 def informar (mensaje):
     global dron
@@ -57,6 +57,13 @@ def go(direction):
 def stopGo():
     global dron
     dron.stopGo()
+
+def land():
+    global dron
+    dron.Land(blocking=False, callback=land_callback())
+
+def land_callback():
+    messagebox.showinfo("showinfo", "El dron va a aterrizar")
 
 def new_function():
     pass
@@ -110,7 +117,12 @@ def crear_ventana():
     armBtn.grid(row=1, column=0, columnspan=4, padx=5, pady=5, sticky=tk.N + tk.S + tk.E + tk.W)
 
     takeOffBtn = tk.Button(controlFrame, text="Despegar", bg="dark orange", command=takeoff)
-    takeOffBtn.grid(row=2, column=0, columnspan=4, padx=5, pady=5, sticky=tk.N + tk.S + tk.E + tk.W)
+    takeOffBtn.grid(row=2, column=3, columnspan=2, padx=5, pady=5, sticky=tk.N + tk.S + tk.E + tk.W)
+
+    global alt_entry
+    alt_entry = tk.Entry(controlFrame)
+    alt_entry.grid(row=2, column=0, columnspan=2, padx=5, pady=5, sticky=tk.N + tk.S + tk.E + tk.W)
+
 
     RTLBtn = tk.Button(controlFrame, text="RTL", bg="dark orange", command=RTL)
     RTLBtn.grid(row=5, column=0, columnspan=4, padx=5, pady=5, sticky=tk.N + tk.S + tk.E + tk.W)
@@ -197,7 +209,7 @@ def crear_ventana():
     userFrame.columnconfigure(3, weight=1)
 
     # Estos botones se pueden configurar como se prefiera y añadir cualquier funcionalidad deseada
-    newButton1 = tk.Button(userFrame, text="Button 1", bg="light grey", command=new_function)
+    newButton1 = tk.Button(userFrame, text="Aterrizar", bg="dark orange", command=land)
     newButton1.grid(row=0, column=0, columnspan=4, padx=5, pady=5, sticky=tk.N + tk.E + tk.W)
 
     newButton2 = tk.Button(userFrame, text="Button 2", bg="light grey", command=new_function)
