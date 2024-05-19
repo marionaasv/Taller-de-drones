@@ -96,10 +96,15 @@ https://www.python.org/downloads/
 Además, durante el taller tendrás que instalar en el entorno de desarrollo creado por Pycharm
 diferentes librerías. Por ejemplo:
 
-**- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen
-  
-**- OpenCV**: permite una gran variedad de operaciones de tratamiento de imagen
-
 ```bash
 import mediapipe as mp
 import cv2
+```
+Dónde: 
+
+**- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen
+
+  
+**- OpenCV:** permite una gran variedad de operaciones de tratamiento de imagen
+
+
