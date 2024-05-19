@@ -111,4 +111,19 @@ Dónde:
   
 **- OpenCV:** permite una gran variedad de operaciones de tratamiento de imagen
 
+## 4. Estructura del repositorio
+
+Una vez hayas instalado Git en tu ordenador, ya puedes clonar en repositorio, que está
+organizado tal y como muestra la figura.
+
+En el repositorio puedes acceder al código de las 4 etapas, puesto que las diferentes versiones
+de la aplicación están convenientemente etiquetadas. Por ejemplo, en la etiqueta **V1.1
+tenemos el código base de la Etapa 1**, perfectamente operativo, en el que puedes aprender
+cómo implementar una interfaz gráfica con botones para controlar el dron. En la etiqueta **V1.2
+tienes el código después de haber resuelto los dos retos** que se te plantearán en esa etapa. De
+la misma manera, encontrarás en la etiqueta **V2.A.1 el código base de la etapa 2.A** y en **V2.A.2
+el código resultante de resolver los retos propuestos**.
+
+
+
 
