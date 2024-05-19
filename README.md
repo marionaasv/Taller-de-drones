@@ -119,7 +119,7 @@ Dónde:
 
 ## 4. Estructura del repositorio
 
-Una vez hayas instalado Git en tu ordenador, ya puedes clonar en repositorio, que está
+Una vez hayas instalado Git en tu ordenador, ya puedes clonar el repositorio, que está
 organizado tal y como muestra en el esquema de la sección [Etapas del taller](#esquema).
 
 En el repositorio puedes acceder al código de las 4 etapas, puesto que las diferentes versiones
