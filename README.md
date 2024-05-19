@@ -130,6 +130,15 @@ tienes el código después de haber resuelto los dos retos** que se te plantear�
 la misma manera, encontrarás en la etiqueta **V2.A.1 el código base de la etapa 2.A** y en **V2.A.2
 el código resultante de resolver los retos propuestos**.
 
+Una vez instalado Git, Mission Planner, Pycharm y el intérprete de Python, mira este video e
+intenta reproducir en tu ordenador lo que ves en él.
+
+[VÍDEO]
+
+El video te muestra cómo **clonar el repositorio**, cómo **crear un proyecto a partir del código
+clonado** y como crear un programa muy sencillo para hacer **operaciones básicas** con el
+simulador del dron.
+
 
 
 
