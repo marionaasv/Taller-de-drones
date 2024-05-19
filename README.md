@@ -62,6 +62,10 @@ las **poses del cuerpo**, detectadas a través de la cámara del portátil. De n
 puesto que las etapas **2.A** y **2.B** se desarrollarán **de manera independiente y en cualquier
 orden.**
 
+<p>
+  <img src="esquema_general.png" width="50%"/>
+</p>
+
 Como ya se ha indicado, en cualquiera de esas etapas es posible plantearse retos mucho más
 ambiciosos que los que se propondrán. Eso ya dependerá de tu nivel de motivación y del
 tiempo que quieras dedicar a este taller.
