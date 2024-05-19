@@ -78,7 +78,7 @@ Para realizar el taller necesitarás instalar en tu ordenador las herramientas s
 
 **- Git:** Es una herramienta muy popular para la gestión de versiones. Con esta herramienta
 podrás instalar en tu ordenador (clonar) este repositorio y acceder a los códigos de las
-diferentes etapas:<br />
+diferentes etapas.<br />
 https://git-scm.com/downloads
 
 **- Mission Planner:** Es una aplicación de escritorio que **permite interactuar con el dron**. Por
@@ -88,7 +88,7 @@ despegar, volar a un punto dado, etc.). Mission Planner permite también poner e
 las aplicaciones que se desarrollan en este taller **interactúan con el simulador, exactamente
 igual que como lo harían con el dron real**. Esto es ideal para desarrollar y verificar el correcto
 funcionamiento de los códigos antes de usarlos para controlar el dron real (cosa que podrás
-hacer si realizas el segundo taller al que hemos hecho referencia en la presentación):<br />
+hacer si realizas el segundo taller al que hemos hecho referencia en la presentación).<br />
 https://ardupilot.org/planner/docs/mission-planner-installation.html
 
 <p>
@@ -118,14 +118,15 @@ import cv2
 
 Dónde: 
 
-**- Tkinter:** biblioteca estándar de Python para crear interfaces gráficas de usuario (GUI). 
+**- Tkinter:** librería estándar de Python para crear interfaces gráficas de usuario (GUI). Se usará en **todas** las etapas del proyecto.
 
-**- TkinterMapView:** widget para la biblioteca Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
+**- TkinterMapView:** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
 
-**- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen
-
+**- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen.
   
-**- OpenCV:** permite una gran variedad de operaciones de tratamiento de imagen
+**- OpenCV:** permite una gran variedad de operaciones de tratamiento de imagen.
+
+Las dos últimas, como es de esperar, se usarán en la rama **poses** del taller.
 
 
 ## 4. Estructura del repositorio
