@@ -40,10 +40,6 @@ UPC, en Castelldefels**.
     <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="Vista previa del video">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="Vista previa del video">
   </a>
 
-  [![Introducción](https://youtu.be/P_NCKA_3-PQ?si=oyNNyIPWYzkNFgrJ)]
-
-
-
 
 ## 2. Etapas del taller
 
