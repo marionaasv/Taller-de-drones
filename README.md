@@ -62,6 +62,8 @@ las **poses del cuerpo**, detectadas a través de la cámara del portátil. De n
 puesto que las etapas **2.A** y **2.B** se desarrollarán **de manera independiente y en cualquier
 orden.**
 
+<a id="esquema"></a>
+
 <p>
   <img src="esquema_general.png" width="60%"/>
 </p>
@@ -118,7 +120,7 @@ Dónde:
 ## 4. Estructura del repositorio
 
 Una vez hayas instalado Git en tu ordenador, ya puedes clonar en repositorio, que está
-organizado tal y como muestra la figura.
+organizado tal y como muestra en el esquema de la sección [Etapas del taller](#esquema).
 
 En el repositorio puedes acceder al código de las 4 etapas, puesto que las diferentes versiones
 de la aplicación están convenientemente etiquetadas. Por ejemplo, en la etiqueta **V1.1
