@@ -85,8 +85,8 @@ funcionamiento de los códigos antes de usarlos para controlar el dron real (cos
 hacer si realizas el segundo taller al que hemos hecho referencia en la presentación):<br />
 https://ardupilot.org/planner/docs/mission-planner-installation.html
 
-<p align="center">
-  <img src="mp.png" width="80%"/>
+<p>
+  <img src="mp.png" width="70%"/>
 </p>
 
 **- PyCharm:** Se trata de la aplicación más popular para el desarrollo de código en Python.
