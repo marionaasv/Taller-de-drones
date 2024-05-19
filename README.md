@@ -67,3 +67,19 @@ ambiciosos que los que se propondrán. Eso ya dependerá de tu nivel de motivaci
 tiempo que quieras dedicar a este taller.
 
 ## 3. Herramientas
+
+Para realizar el taller necesitarás instalar en tu ordenador las herramientas siguientes:
+
+**- Git:** Es una herramienta muy popular para la gestión de versiones. Con esta herramienta
+podrás instalar en tu ordenador (clonar) este repositorio y acceder a los códigos de las
+diferentes etapas:
+https://git-scm.com/downloads
+
+**- Mission Planner:** Es una aplicación de escritorio que permite interactuar con el dron. Por
+ejemplo, permite configurar muchos parámetros del dron y darle ordenes típicas (armar,
+despegar, volar a un punto dado, etc.). Mission Planner permites también poner en marcha un
+simulador del dron, que llamaremos SITL (Software In The Loop). Tanto Mission Planner como
+las aplicaciones que se desarrollan en este taller interactúan con el simulador, exactamente
+igual que como lo harían con el dron real. Esto es ideal para desarrollar y verificar el correcto
+funcionamiento de los códigos antes de usarlos para controlar el dron real (cosa que podrás
+hacer si realizas el segundo taller al que hemos hecho referencia en la presentación): https://ardupilot.org/planner/docs/mission-planner-installation.html
