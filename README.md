@@ -107,15 +107,26 @@ Además, durante el taller tendrás que instalar en el entorno de desarrollo cre
 diferentes librerías. Por ejemplo:
 
 ```bash
+import tkinter as tk
+import tkintermapview
+```
+
+```bash
 import mediapipe as mp
 import cv2
 ```
+
 Dónde: 
+
+**- Tkinter:** biblioteca estándar de Python para crear interfaces gráficas de usuario (GUI). 
+
+**- TkinterMapView:** widget para la biblioteca Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
 
 **- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen
 
   
 **- OpenCV:** permite una gran variedad de operaciones de tratamiento de imagen
+
 
 ## 4. Estructura del repositorio
 
