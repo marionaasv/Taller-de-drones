@@ -63,7 +63,7 @@ puesto que las etapas **2.A** y **2.B** se desarrollarán **de manera independie
 orden.**
 
 <p>
-  <img src="esquema_general.png" width="50%"/>
+  <img src="esquema_general.png" width="60%"/>
 </p>
 
 Como ya se ha indicado, en cualquiera de esas etapas es posible plantearse retos mucho más
