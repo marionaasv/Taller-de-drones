@@ -75,12 +75,17 @@ podrás instalar en tu ordenador (clonar) este repositorio y acceder a los códi
 diferentes etapas:<br />
 https://git-scm.com/downloads
 
-**- Mission Planner:** Es una aplicación de escritorio que permite interactuar con el dron. Por
+**- Mission Planner:** Es una aplicación de escritorio que **permite interactuar con el dron**. Por
 ejemplo, permite configurar muchos parámetros del dron y darle ordenes típicas (armar,
-despegar, volar a un punto dado, etc.). Mission Planner permites también poner en marcha un
-simulador del dron, que llamaremos SITL (Software In The Loop). Tanto Mission Planner como
-las aplicaciones que se desarrollan en este taller interactúan con el simulador, exactamente
-igual que como lo harían con el dron real. Esto es ideal para desarrollar y verificar el correcto
+despegar, volar a un punto dado, etc.). Mission Planner permite también poner en marcha un
+**simulador del dron**, que llamaremos **SITL** (Software In The Loop). Tanto Mission Planner como
+las aplicaciones que se desarrollan en este taller **interactúan con el simulador, exactamente
+igual que como lo harían con el dron real**. Esto es ideal para desarrollar y verificar el correcto
 funcionamiento de los códigos antes de usarlos para controlar el dron real (cosa que podrás
 hacer si realizas el segundo taller al que hemos hecho referencia en la presentación):<br />
 https://ardupilot.org/planner/docs/mission-planner-installation.html
+
+**- PyCharm:** Se trata de la aplicación más popular para el desarrollo de código en Python.
+Asegurate de instalar la versión denominada Community Edition, que es gratuita y más que
+suficiente.<br />
+https://www.jetbrains.com/pycharm/
