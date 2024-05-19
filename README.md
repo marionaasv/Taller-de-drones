@@ -1,6 +1,6 @@
-# Taller de Drones
+# Taller-de-Drones
 
-#### Nombre del taller: [Nombre del Taller]
+#### _Nombre del taller: Taller de Drones_
 
 ## **1. Presentación**
 
@@ -46,3 +46,26 @@ UPC, en Castelldefels**.
 ## 2. Etapas del taller
 
 El taller está organizado en 4 etapas, que se describen a continuación:
+
+**- Etapa 1**: Se desarrolla un programa en **Python** con una **interfaz gráfica** basada en botones con
+los que controlar la operación del dron (operaciones básicas como **armar, despegar, volar en
+diferentes direcciones** o **aterrizar**). En esta etapa se plantean un par de **retos**, cuya solución
+también puede encontrarse en el repositorio.
+
+**- Etapa 2.A:** Se añade al resultado de la Etapa 1 un **mapa** que permite mostrar al usuario la
+posición del dron en cada momento. También se plantean un par de **retos** que permiten al
+usuario interactuar con el dron a través del mapa.
+
+**- Etapa 2.B:** Se añade al resultado de la Etapa 1 el código necesario para guiar el dron mediante
+las **poses del cuerpo**, detectadas a través de la cámara del portátil. De nuevo se plantearán dos
+**retos** para ampliar las funcionalidades de esta versión.
+
+**- Etapa 3:** Consiste en integrar en una única aplicación los desarrollos de las etapas anteriores,
+puesto que las etapas **2.A** y **2.B** se desarrollarán **de manera independiente y en cualquier
+orden.**
+
+Como ya se ha indicado, en cualquiera de esas etapas es posible plantearse retos mucho más
+ambiciosos que los que se propondrán. Eso ya dependerá de tu nivel de motivación y del
+tiempo que quieras dedicar a este taller.
+
+## 3. Herramientas
