@@ -89,3 +89,17 @@ https://ardupilot.org/planner/docs/mission-planner-installation.html
 Asegurate de instalar la versión denominada Community Edition, que es gratuita y más que
 suficiente.<br />
 https://www.jetbrains.com/pycharm/
+
+**- Python:** Necesitarás un intérprete de Python. Puedes utilizar las versiones más actuales.<br />
+https://www.python.org/downloads/
+
+Además, durante el taller tendrás que instalar en el entorno de desarrollo creado por Pycharm
+diferentes librerías. Por ejemplo:
+
+**- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen
+  
+**- OpenCV**: permite una gran variedad de operaciones de tratamiento de imagen
+
+```bash
+import mediapipe as mp
+import cv2
