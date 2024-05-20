@@ -139,6 +139,8 @@ tienes el código después de haber resuelto los dos retos** que se te plantear�
 la misma manera, encontrarás en la etiqueta **V2.A.1 el código base de la etapa 2.A** y en **V2.A.2
 el código resultante de resolver los retos propuestos**.
 
+--- 
+
 ### 4.1. Git
 
 La herramienta **Git te permite crear ramas para tus propios desarrollos.** De hecho, la figura
