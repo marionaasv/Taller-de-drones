@@ -141,7 +141,7 @@ el código resultante de resolver los retos propuestos**.
 
 --- 
 
-### 4.1. Git
+### Git
 
 La herramienta **Git te permite crear ramas para tus propios desarrollos.** De hecho, la figura
 muestra que el código tiene una rama principal **(main)** que se **divide en dos ramas (mapa y
@@ -158,7 +158,7 @@ de una rama a otra** o de una versión a otra.
 
 ---
 
-### 4.2 Para empezar a programar
+### Para empezar a programar
 
 Una vez instalado **Git, Mission Planner, Pycharm** y el intérprete de **Python**, mira este video e
 intenta reproducir en tu ordenador lo que ves en él.
@@ -171,5 +171,28 @@ la librería _**DronLib**_, que está incluida en el repositorio de este taller.
 
 ---
 
+### La librería DronLib
 
+DronLib es la librería que vamos a usar para **darle ordenes al dron** (tanto al simulador SITL
+como al dron real). Es una **librería en desarrollo en la UPC** (y por tanto, no exenta de fallos) que
+pretende ser una alternativa a DroneKit, que es la más utilizada, pero que ya no está en
+mantenimiento y no es compatible con las versiones más avanzadas del intérprete de Python.
+
+La librería esta implementada en forma de clase **(la clase Dron)** con sus atributos y una
+variedad de métodos para operar con el dron. La clase con los atributos está definida en el
+fichero _Dron.py_ y los métodos están en los diferentes ficheros de la carpeta _modules_
+(connect.py, arm.py, etc.).
+
+Muchos de los métodos pueden activarse **de forma bloqueante o de forma no bloqueante**. En
+el primer caso, **el control no se devuelve al programa que hace la llamada hasta que la
+operación ordenada haya acabado**. Si la llamada es no bloqueante entonces **el control se
+devuelve inmediatamente** para que el programa pueda hacer otras cosas mientras se realiza la
+operación.
+
+Un ejemplo de método con estas dos opciones es _takeOff_, que tiene la siguiente cabecera:
+
+
+```bash
+def takeOff(self, aTargetAltitude, blocking=True, callback=None , params = None)
+```
 
