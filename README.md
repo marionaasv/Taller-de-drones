@@ -107,26 +107,23 @@ Además, durante el taller tendrás que instalar en el entorno de desarrollo cre
 diferentes librerías. Por ejemplo:
 
 ```bash
-import tkinter as tk
-import tkintermapview
+from pymavlink import mavutil
 ```
 
 ```bash
+import tkintermapview
 import mediapipe as mp
-import cv2
 ```
 
 Dónde: 
 
-**- Tkinter:** librería estándar de Python para crear interfaces gráficas de usuario (GUI). Se usará en **todas** las etapas del proyecto.
+**- _Pymavlink:_** contiene una gran variedad de funciones que permiten controlar el dron
+desde código en Python.
 
-**- TkinterMapView:** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
+**- _TkinterMapView:_** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
 
-**- Mediapipe:** permite detectar puntos clave del cuerpo que aparece en la imagen.
-  
-**- OpenCV:** permite una gran variedad de operaciones de tratamiento de imagen.
-
-Las dos últimas, como es de esperar, se usarán en la rama **poses** del taller.
+**- _Mediapipe:_** tiene una variedad de funciones para procesar imágenes. Es la librería que
+usaremos para detectar **poses** del cuerpo.
 
 
 ## 4. Estructura del repositorio
