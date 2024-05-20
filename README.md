@@ -154,6 +154,8 @@ de una rama a otra** o de una versión a otra.
 
 [VÍDEO 2]
 
+---
+
 ### 4.2 Para empezar a programar
 
 Una vez instalado **Git, Mission Planner, Pycharm** y el intérprete de **Python**, mira este video e
@@ -165,6 +167,7 @@ la librería _**DronLib**_, que está incluida en el repositorio de este taller.
 
 [VÍDEO 3]
 
+---
 
 
 
