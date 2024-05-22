@@ -62,15 +62,10 @@ las **poses del cuerpo**, detectadas a través de la cámara del portátil. De n
 puesto que las etapas **2.A** y **2.B** se desarrollarán **de manera independiente y en cualquier
 orden.**
 
-<a id="esquema"></a>
-
-<p>
-  <img src="esquema_general.png" width="60%"/>
-</p>
-
-Como ya se ha indicado, en cualquiera de esas etapas es posible plantearse retos mucho más
-ambiciosos que los que se propondrán. Eso ya dependerá de tu nivel de motivación y del
-tiempo que quieras dedicar a este taller.
+En este repositorio encontrarás un apartado dedicado a cada una de estas etapas en las que se
+describirá (**con texto y videos**) las funcionalidades de la versión inicial de esa etapa, los retos
+que te proponemos (y que también encontrarás resueltos) y una lista de posibles retos más
+ambiciosos que esperamos que despierten tu interés.
 
 ## 3. Herramientas
 
@@ -129,7 +124,13 @@ usaremos para detectar **poses** del cuerpo.
 ## 4. Estructura del repositorio
 
 Una vez hayas instalado Git en tu ordenador, ya puedes clonar el repositorio, que está
-organizado tal y como muestra en el esquema de la sección [Etapas del taller](#esquema).
+organizado tal y como muestra en la figura:
+
+<a id="esquema"></a>
+
+<p>
+  <img src="esquema2.jpg" width="60%"/>
+</p>
 
 En el repositorio puedes acceder al código de las 4 etapas, puesto que las diferentes versiones
 de la aplicación están convenientemente etiquetadas. Por ejemplo, en la etiqueta **V1.1
