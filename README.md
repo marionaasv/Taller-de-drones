@@ -533,5 +533,9 @@ def goto(self,
 
 **Dirige al dron al punto geográfico indicado**. Esta no funciona si estamos en modo navegación.
 
+---
 
+## Etapa 1: Interfaz con botones
+
+### Versión inicial
 
