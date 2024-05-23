@@ -310,10 +310,228 @@ En este ejemplo usamos la opción de identificar al dron **en el momento de la c
 el método de la librería va a añadir siempre ese identificador como primer parámetro del
 callback que le indiquemos.
 
----
-
 La modalidad no bloqueante en las llamadas a la librería es especialmente útil **cuando
 queremos interactuar con el dron mediante una interfaz gráfica**. Por ejemplo, no vamos a
 querer que se bloquee la interfaz mientras el dron despega. Seguramente querremos seguir
 procesando los datos de telemetría mientras el dron despega, para mostrar al usuario, por
 ejemplo, la altura del dron en todo momento.
+
+---
+
+## 5. Funciones de la clase Dron
+
+A continuación se describen las funciones de la clase Dron que se usan en este taller. En
+muchas de ellas aparecen los tres parámetros requeridos para implementar la modalidad no
+bloqueante (_blocking_, _callback_ y _params_).
+
+---
+
+```bash
+def connect(self,
+  connection_string, baud,
+  id=None,
+  blocking=True, callback=None, params = None)
+```
+
+**Conecta con el dron**. Los parámetros _connection_string_ y _baud_ indican si hay que **conectar con
+el simulador o con el dron real**, y la **velocidad de comunicación**. Para conectar con el simulador
+típicamente el string de conexión es: ‘**_tcp:127.0.0.1:5763_**’ y la velocidad es **115200**.
+La conexión admite una identificador para el dron, que la librería añadirá como primer parámetro
+en todas las funcione callback.
+
+---
+
+```bash
+def disconnect (self)
+```
+
+**Desconecta el dron**. Además, detiene el envío de datos de telemetría y espera 5 segundos antes
+de retornar.
+
+---
+
+```bash
+def arm(self, blocking=True, callback=None, params = None)
+```
+
+**Arma el dron.**
+
+---
+
+```bash
+def takeOff(self,
+   aTargetAltitude,
+   blocking=True, callback=None, params = None)
+```
+
+**Despega el dron** hasta alcanzar la altura indicada en el parámetro.
+
+---
+
+```bash
+def startGo(self)
+```
+
+**Pone al dron en modo navegación**, para que acepte las ordenes de navegar en dirección Norte,
+Sur, etc.
+
+---
+
+```bash
+def stopGo(self)
+```
+
+**Para el modo navegación**. Es necesario hacer esto antes de ordenar otras operaciones (como por
+ejemplo dirigirse a un punto determinado).
+
+---
+
+```bash
+def changeNavSpeed (self, speed)
+```
+
+**Cambia la velocidad** del dron cuando está en modo navegación.
+
+---
+
+```bash
+def go(self, direction))
+```
+
+Hace que el dron navegue en la dirección indicada. Las opciones son: _‘North’, ‘South’,
+‘West’, ‘East’, ‘NorthWest’, ‘NorthEast’, ‘SouthWest’, ‘SouthEast’, ‘Stop’_.
+
+---
+
+```bash
+def getParams(self,
+   parameters,
+   blocking=True, callback=None)
+```
+
+**Pide al dron el valor de los parámetros indicados**. En el caso de que la llamada sea o bloqueante,
+ejecutará la función del callback pasándole como parámetro la lista de valores recibida (y el
+identificador del dron como primer parámetro en el caso de que el dron haya sido identificando en
+el momento de la conexión). Este ejemplo **muestra cómo se pasa la lista de parámetros** (en
+formato **json**) cuyo valor se quiere recuperar y como se revuelve la lista de valores de esos
+parámetros.
+
+```bash
+parameters = json.dumps([
+    "RTL_ALT",
+    "PILOT_SPEED_UP",
+    "FENCE_ACTION"
+])
+result = dron.getParams(parameters)
+values = json.loads(result)
+print('Valores:' ,values)
+```
+
+El resultado podría ser:
+
+```bash
+Valores: [{'RTL_ALT:' -1.0}, {'PILOT_SPEED_UP:' 100.0}, {'FENCE_ACTION:' 4.0}]
+```
+
+---
+
+```bash
+def setParams(self,
+   parameters,
+   blocking=True, callback=None, params = None)
+```
+
+Establece el valor de los parámetros que se le pasan en una lista en formato json. Un ejemplo de
+uso es este:
+
+```bash
+parameters = json.dumps([
+      {ID: "FENCE_ENABLE", Value: 1},
+      {ID: "FENCE_ACTION", Value: 4},
+])
+dron.setParams(parameters)
+```
+
+---
+
+```bash
+def RTL (self, blocking=True, callback=None, params = None)
+```
+
+Ordena al dron que retorne a casa (**Return to launch**).
+
+---
+
+```bash
+def Land (self, blocking=True, callback=None, params = None)
+```
+
+Ordena al dron que **aterrice** en el punto que está sobrevolando.
+
+---
+
+```bash
+def setGEOFence(self,
+  fence_waypoints,
+  blocking=True, callback=None, params = None)
+```
+
+Envía al dron la **configuración del geofence**, que consiste en la lista de las coordenadas geográficas
+que **delimitan el polígono** (al menos 3 puntos), en formato json. Un ejemplo puede ser este:
+
+```bash
+fence_waypoints = json.dumps([
+  {'lat': 41.123, 'lon': 1.988},
+  {'lat': 41.234, 'lon': 1.999},
+  {'lat': 41.150, 'lon': 1.870}
+])
+dron.setGEOFence(fence_waypoints)
+```
+
+---
+
+```bash
+def send_telemetry_info(self, process_telemetry_info)
+```
+
+Pide al dron que envíe los **datos de telemetría**. Cuando el dron tiene un nuevo paquete de
+telemetría llama al callback y le pasa ese paquete en formato json (y el identificador del dron
+como primer parámetro en el caso de que el dron haya sido identificando en el momento de la
+conexión). **El dron va a enviar 4 paquetes por segundo**. El ejemplo siguiente muestra el formato en
+que se reciben los datos de telemetría:
+
+```bash
+def process_telemetry_info(self, telemetry_info):
+   print ('info:', telemetry_info)
+```
+
+El resultado podría ser:
+
+```bash
+info:{'lat':41.276, 'lon':1.988, 'alt': -0.016, 'groundSpeed': 0.120, 'heading':
+355.88, 'state': connected}
+```
+
+Los posibles estados en los que puede estar el dron son: _‘connected’, ‘disconnected’,
+‘arming’, ‘armed’, ‘takingOff’, ‘flying’, ‘returning’, ‘landing’_.
+
+---
+
+```bash
+def stop_sending_telemetry_info(self)
+```
+
+**Detiene el envío de datos de telemetría**.
+
+---
+
+```bash
+def goto(self,
+  lat, lon, alt,
+  blocking=True, callback=None, params=None)
+```
+
+**Dirige al dron al punto geográfico indicado**. Esta no funciona si estamos en modo navegación.
+
+
+
