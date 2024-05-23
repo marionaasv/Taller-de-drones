@@ -39,6 +39,7 @@ cual tendrás que modificar solo un par de líneas de tu código). Naturalmente,
 taller se realiza de forma presencial en las instalaciones **del campus del Baix Llobregat de la
 UPC, en Castelldefels**.
 
+Mira este vídeo para ver una demo de la aplicación que se desarrolla en este taller.
 
   <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">, <a href="https://www.youtube.com/watch?v=UPyklN9namM">
     <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="Vista previa del video">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="Vista previa del video">
@@ -201,3 +202,118 @@ Un ejemplo de método con estas dos opciones es _takeOff_, que tiene la siguient
 def takeOff(self, aTargetAltitude, blocking=True, callback=None , params = None)
 ```
 
+Al llamar a este método hay que pasarle como parámetro la **altura de despegue**. Por defecto la
+operación es **bloqueante**. En el caso de usar la opción no bloqueante se puede indicar el
+nombre de la función que queremos que se ejecute cuando la operación haya acabado (que
+llamamos habitualmente **callback**). Incluso podemos indicar los parámetros que queremos que
+se le pasen a ese callback. **Recuerda que self no es ningún parámetro**. Simplemente **indica que
+este es un método de una clase** (en este caso, la clase Dron).
+
+Los siguientes ejemplos aclararán estas cuestiones.
+
+---
+
+### Ejemplo 1
+
+```bash
+from Dron import Dron
+dron = Dron()
+dron.connect (&#39;tcp:127.0.0.1:5763&#39;, 115200) # me conecto al simulador
+print (‘Conectado’)
+dron.arm()
+print (‘Armado’)
+dron.takeOff (8)
+print (‘En el aire a 8 metros de altura’)
+```
+
+En este ejemplo todas las llamadas son bloqueantes.
+
+--- 
+
+### Ejemplo 2
+
+```bash
+from Dron import Dron
+dron = Dron()
+dron.connect (&#39;tcp:127.0.0.1:5763&#39;, 115200) # me conecto al simulador
+print (‘Conectado’)
+dron.arm()
+print (‘Armado’)
+dron.takeOff (8, blocking = False) # llamada no bloqueante, sin callback
+print (‘Hago otras cosas mientras se realiza el despegue’)
+```
+
+---
+
+### Ejemplo 3
+
+```bash
+from Dron import Dron
+dron = Dron()
+dron.connect (&#39;tcp:127.0.0.1:5763&#39;, 115200) # me conecto al simulador
+print (‘Conectado’)
+dron.arm()
+print (‘Armado’)
+def enAire (): # esta es la función que se activa al acabar la operación (callback)
+print (‘Por fin ya estás en el aire a 8 metros de altura’)
+# llamada no bloqueante con callback
+dron.takeOff (8, blocking = False, callback= enAire)
+print (‘Hago otras cosas mientras se realiza el despegue’)
+```
+
+---
+
+### Ejemplo 4
+
+```bash
+from Dron import Dron
+dron = Dron()
+dron.connect (&#39;tcp:127.0.0.1:5763&#39;, 115200) # me conecto al simulador
+print (‘Conectado’)
+dron.arm()
+print (‘Armado’)
+def informar (param):
+print (‘Mensaje del dron: ‘, param)
+# Llamada no bloqueante, con callback y parámetro para el callback
+dron.takeOff (8, blocking = False, callback= informar,
+params= ‘En el aire a 8 metros de altura’)
+
+print (‘Hago otras cosas mientras se realiza el despegue. Ya me avisarán’)
+```
+
+En este ejemplo usamos un **callback que puede ser utilizado en otros momentos**, como por
+ejemplo al hacer un RTL no bloqueante, en cuyo caso el callback podría ser el mismo, pero con
+un parámetro diferente (como, por ejemplo, ‘Por fin en casa’).
+
+---
+
+### Ejemplo 5
+
+```bash
+from Dron import Dron
+dron = Dron()
+# conexión con identificador del dron
+dron.connect (&#39;tcp:127.0.0.1:5763&#39;, 115200, id=1)
+print (‘Conectado’)
+dron.arm()
+print (‘Armado’)
+# La función del callback recibirá el id del dron como primer parámetro
+def informar (id, param):
+print (‘Mensaje del dron ‘+str(id) + ‘: ‘ + param)
+dron.takeOff (8, blocking = False, callback= informar,
+params= ‘En el aire a 8 metros de altura’)
+print (‘Hago otras cosas mientras se realiza el despegue. Ya me avisarán’)
+```
+
+En este ejemplo usamos la opción de identificar al dron **en el momento de la conexión**
+(podríamos tener varios drones, cada uno con su identificador). Si usamos esa opción entonces
+el método de la librería va a añadir siempre ese identificador como primer parámetro del
+callback que le indiquemos.
+
+---
+
+La modalidad no bloqueante en las llamadas a la librería es especialmente útil **cuando
+queremos interactuar con el dron mediante una interfaz gráfica**. Por ejemplo, no vamos a
+querer que se bloquee la interfaz mientras el dron despega. Seguramente querremos seguir
+procesando los datos de telemetría mientras el dron despega, para mostrar al usuario, por
+ejemplo, la altura del dron en todo momento.
