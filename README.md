@@ -17,6 +17,10 @@ En este repositorio encontrarás:
    
 Aprenderás instalando esos códigos, analizándolos, modificándolos y ampliándolos.
 
+<p>
+  <img src="UI.jpg" width="60%"/>
+</p>
+
 El taller admite diferentes grados de implicación. Puedes limitarte a instalar los códigos, 
 comprobar que funcionan correctamente y examinarlos. Eso no te llevará más de 1 hora.
 Puedes también enfrentarte a unos cuantos retos concretos que te iremos proponiendo, y que
@@ -87,7 +91,7 @@ hacer si realizas el segundo taller al que hemos hecho referencia en la presenta
 https://ardupilot.org/planner/docs/mission-planner-installation.html
 
 <p>
-  <img src="mp.png" width="70%"/>
+  <img src="mp.png" width="60%"/>
 </p>
 
 **- PyCharm:** Se trata de la aplicación más popular para el desarrollo de código en Python.
