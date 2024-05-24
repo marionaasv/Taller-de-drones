@@ -72,8 +72,8 @@ describirá (**con texto y videos**) las funcionalidades de la versión inicial 
 que te proponemos (y que también encontrarás resueltos) y una lista de posibles retos más
 ambiciosos que esperamos que despierten tu interés.
 
-## 3. Herramientas
-
+## 3. Herramientas 
+<a id="pymavlink"></a>
 Para realizar el taller necesitarás instalar en tu ordenador las herramientas siguientes:
 
 **- Git:** Es una herramienta muy popular para la gestión de versiones. Con esta herramienta
@@ -118,7 +118,7 @@ import mediapipe as mp
 Dónde: 
 
 **- _Pymavlink:_** contiene una gran variedad de funciones que permiten controlar el dron
-desde código en Python. <a id="pymavlink"></a>
+desde código en Python. 
 
 **- _TkinterMapView:_** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
 
