@@ -50,20 +50,20 @@ Mira este vídeo para ver una demo de la aplicación que se desarrolla en este t
 
 El taller está organizado en 4 etapas, que se describen a continuación:
 
-**- Etapa 1**: Se desarrolla un programa en **Python** con una **interfaz gráfica** basada en botones con
+- **Etapa 1**: Se desarrolla un programa en **Python** con una **interfaz gráfica** basada en botones con
 los que controlar la operación del dron (operaciones básicas como **armar, despegar, volar en
 diferentes direcciones** o **aterrizar**). En esta etapa se plantean un par de **retos**, cuya solución
 también puede encontrarse en el repositorio.
 
-**- Etapa 2.A:** Se añade al resultado de la Etapa 1 un **mapa** que permite mostrar al usuario la
+- **Etapa 2.A:** Se añade al resultado de la Etapa 1 un **mapa** que permite mostrar al usuario la
 posición del dron en cada momento. También se plantean un par de **retos** que permiten al
 usuario interactuar con el dron a través del mapa.
 
-**- Etapa 2.B:** Se añade al resultado de la Etapa 1 el código necesario para guiar el dron mediante
+- **Etapa 2.B:** Se añade al resultado de la Etapa 1 el código necesario para guiar el dron mediante
 las **poses del cuerpo**, detectadas a través de la cámara del portátil. De nuevo se plantearán dos
 **retos** para ampliar las funcionalidades de esta versión.
 
-**- Etapa 3:** Consiste en integrar en una única aplicación los desarrollos de las etapas anteriores,
+- **Etapa 3:** Consiste en integrar en una única aplicación los desarrollos de las etapas anteriores,
 puesto que las etapas **2.A** y **2.B** se desarrollarán **de manera independiente y en cualquier
 orden.**
 
@@ -559,4 +559,66 @@ indica qué función hay que ejecutar cuando haya acabado la operación solicita
 Este vídeo contiene una **explicación del código de esta versión** y una **demostración de la
 aplicación en funcionamiento**. Fíjate que para ejecutar el código tendrás que instalar la librería
 **_pymavlink_** (recuerda que en la [sección _3. Herramientas_](#pymavlink) se te da una explicación más detallada de la librería) .
+
+[VIDEO] (Demo de la etapa 1)
+
+---
+
+### Retos
+
+Te proponemos dos retos sencillos, cuya solución encontrarás en el código etiquetado con
+“**v1.2**”.
+
+- **Reto 1**: Añade botón para hacer que el dron aterrice en el punto sobre el que se encuentra.
+Échale un vistazo a la librería de funciones de contro del dron. Seguro que encuentras allí la
+función que necesitas.
+
+- **Reto 2**: Añade algún elemento a la interfaz que te permita introducir la altura a la que quieres
+que despegue el dron (que en la versión inicial es una altura fija).
+
+### Más retos
+
+Aquí tienes una lista con otros retos que podrías plantearte, si tienes ganas y tiempo.
+Naturalmente **tendrás que investigar un poco la librería de funciones** para ver qué cosas se
+pueden hacer con el dron:
+
+1. Introduce un elemento de tipo _Scale_ (como el que se usa para especificar la velocidad
+de vuelo) para especificar la altura de despegue.
+
+3. Introduce los elementos necesarios para hacer que el **dron rote un cierto ángulo**
+cuando está en el aire (cambio de heading).
+
+5. Introduce algún elemento para que se muestre en todo momento **la altura** que tiene el
+dron.
+
+---
+
+## Etapa 2.A: Interfaz con mapa
+
+### Versión inicial
+
+Puede encontrarse en el tag “**v2.A.1**”. La novedad más importante es la aparición de un **botón
+que abre una ventana nueva**, cuyo código está en el fichero _MapFrame.py_, en el que se
+muestra un **mapa navegable**, igual que los que nos muestra Google Maps o el propio Mission
+Planner. En ese mapa podemos hacer que **se muestre el dron** y **seguir sus movimientos según
+le indiquemos con los botones de navegación**, exactamente igual que los podemos seguir en el
+mapa de Mission Planner. Analizando el código de esta versión aprenderás a **mostrar un mapa
+de la zona que quieras** (indicando las coordenadas geográficas, a colocar una imagen en el 
+mapa (por ejemplo, el icono del dron), a **capturar los eventos de ratón sobre el mapa** y **fijar
+marcas o dibujar líneas**.
+
+La función más interesante de esta versión es la **creación de un geofence**: un
+**polígono que encierra al dron**, de manera que el dron no pueda escapar del interior de ese
+polígono. Como puedes imaginar, esa es una **medida de seguridad extremadamente útil** para
+realizar vuelos reales. Observa cómo se fija los puntos (coordenadas geográficas) que definen
+el polígono y como se prepara la información que hay que enviarle a la librería de control del
+dron para que establezca el geofence. Finalmente, es necesario **activar el geofence e indicar
+qué acción debe hacer el dron si llega al límite del greofence**, que es nuestra aplicación será
+quedarse parado en ese límite (fíjate ya de paso en la manera de cambiar cualquiera de los
+muchos parámetros que tiene el dron, y que puedes listar desde Mission Planner clicando en
+Config --> Full parameter list).
+
+Este vídeo contiene una explicación del código de esta versión y una demostración de la
+aplicación en funcionamiento. Fíjate que para ejecutar el código tendrás que instalar la librería
+**tkintermapview**.
 
