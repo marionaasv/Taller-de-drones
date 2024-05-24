@@ -118,7 +118,7 @@ import mediapipe as mp
 Dónde: 
 
 **- _Pymavlink:_** contiene una gran variedad de funciones que permiten controlar el dron
-desde código en Python.
+desde código en Python. <a id="pymavlink"></a>
 
 **- _TkinterMapView:_** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
 
@@ -538,4 +538,25 @@ def goto(self,
 ## Etapa 1: Interfaz con botones
 
 ### Versión inicial
+
+Accede al código de la versión inicial de esta etapa, que tiene la etiqueta **“v1.1”**. Al ejecutar el
+código del programa principal (_Dashboard.py_) se mostrará una sencilla interfaz gráfica con
+botones para realizar las **operaciones más básicas con el dron: conectar, armar, despegar,
+mover el dron en diferentes direcciones y retornar a casa.**
+
+Fíjate en el código que crea la interfaz gráfica basada en botones, que utiliza la **librería tkinter**.
+Parece algo complejo, pero no lo es. Simplemente hay que imaginarse la interfaz como **una
+matriz de filas y columnas**. El código indica qué elemento gráfico hay que colocar en cada
+fila/columna de esa matriz. La mayoría de esos elementos son **botones**, pero algunos son
+**_frames_** que internamente también están organizados como pequeñas matrices con sus filas,
+sus columnas y sus elementos. Fíjate que hay algunos elementos de la interfaz que no se usan
+y que puedes aprovechar si decides abordar los retos que te proponemos más adelante.
+
+También es importante que veas cómo se usa nuestra librería con las funciones para controlar
+el dron. Fíjate especialmente en el uso de las **llamadas no bloqueantes** y la forma en que se
+indica qué función hay que ejecutar cuando haya acabado la operación solicitada.
+
+Este vídeo contiene una **explicación del código de esta versión** y una **demostración de la
+aplicación en funcionamiento**. Fíjate que para ejecutar el código tendrás que instalar la librería
+**_pymavlink_** (recuerda que en la [sección _3. Herramientas_](#pymavlink) se te da una explicación más detallada de la librería) .
 
