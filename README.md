@@ -721,3 +721,9 @@ interesantes. Por ejemplo, hay funciones para detectar puntos clave de las **man
 hacer que el dron despegue si haces ante la cámara con la mano el signo de OK?). Otras
 funciones detectan puntos clave de la cara (**¿puedes hacer que el dron aterrice si le guiñas el
 ojo izquierdo?**).
+
+<p>
+  <img src="retos_finales.jpg" width="50%"/>
+</p>
+
+---
