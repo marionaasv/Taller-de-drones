@@ -684,3 +684,40 @@ coordenadas de cada uno de esos puntos clave, asumiendo que la imagen es un espa
 en el que la coordenada x (eje horizontal) va de 0 a 1 y la coordenada y (eje vertical) va de 0 a
 1**. De esta forma, la **esquina superior izquierda** tiene la coordenada **(0,0)** y la **inferior derecha**
 tiene la coordenada **(1,1)**.
+
+<p>
+  <img src="poses_cuerpo.jpg" width="50%"/>
+</p>
+
+A partir de esta lista de coordenadas es fácil determinar si la pose del cuerpo es una
+determinada, comprobando la posición relativa de cada punto de la pose con el resto. En las
+poses implementadas solo se usan los puntos clave **del 11 al 16**.
+
+Observa que en el código tenemos la clase _BodyFrame_ que muestra las imágenes guía y tiene
+los botones para poner en marcha la funcionalidad. En esa clase, una vez se obtiene una
+imagen de la cámara se envía a la clase _PoseDetector_ en la que se hacen las comprobaciones
+necesarias para determinar qué pose hay en la imagen. Al recoger el resultado, la clase
+_BodyFram_e da la orden correspondiente al dron.
+
+[VIDEO] Demo etapa 2.B
+
+---
+
+### Reto
+
+Entre las imágenes de referencia que aparecen al poner en marcha la versión inicial **hay 3 en
+rojo que no están implementadas**. Modifica el código para hacer que _PoseDetector_ detecte
+esas 3 nuevas poses y modifica el código de _BodyFrame_ para **asociar a cada una de esas 3
+poses una nueva operación del dron** (las que tu elijas).
+
+### Más retos
+
+El número de poses que impliquen exclusivamente los puntos clave del 11 al 16 es limitado.
+Puedes inventar poses más complejas en las que intervengan muchos más puntos. **Por
+ejemplo, trata de implementar tus poses de yoga favoritas**.
+
+La librería _mediapipe_ incluye muchas otras funcionalidades que pueden inspirarte aplicaciones
+interesantes. Por ejemplo, hay funciones para detectar puntos clave de las **manos** (¿puedes
+hacer que el dron despegue si haces ante la cámara con la mano el signo de OK?). Otras
+funciones detectan puntos clave de la cara (**¿puedes hacer que el dron aterrice si le guiñas el
+ojo izquierdo?**).
