@@ -45,6 +45,10 @@ Mira este vídeo para ver una demo de la aplicación que se desarrolla en este t
     <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="">
   </a>
 
+   <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">
+    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="">
+  </a>
+
 
 ## 2. Etapas del taller
 
