@@ -41,7 +41,7 @@ UPC, en Castelldefels**.
 
 Mira este vídeo para ver una demo de la aplicación que se desarrolla en este taller.
 
-  <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">, 
+  <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">
   <a href="https://www.youtube.com/watch?v=UPyklN9namM">
     <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="">
   </a>
