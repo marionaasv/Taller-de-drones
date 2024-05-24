@@ -73,7 +73,7 @@ que te proponemos (y que también encontrarás resueltos) y una lista de posible
 ambiciosos que esperamos que despierten tu interés.
 
 ## 3. Herramientas 
-<a id="pymavlink"></a>
+
 Para realizar el taller necesitarás instalar en tu ordenador las herramientas siguientes:
 
 **- Git:** Es una herramienta muy popular para la gestión de versiones. Con esta herramienta
@@ -94,7 +94,7 @@ https://ardupilot.org/planner/docs/mission-planner-installation.html
 <p>
   <img src="mp.png" width="70%"/>
 </p>
-
+<a id="installs"></a>
 **- PyCharm:** Se trata de la aplicación más popular para el desarrollo de código en Python.
 Asegurate de instalar la versión denominada Community Edition, que es gratuita y más que
 suficiente.<br />
@@ -558,7 +558,7 @@ indica qué función hay que ejecutar cuando haya acabado la operación solicita
 
 Este vídeo contiene una **explicación del código de esta versión** y una **demostración de la
 aplicación en funcionamiento**. Fíjate que para ejecutar el código tendrás que instalar la librería
-**_pymavlink_** (recuerda que en la [sección _3. Herramientas_](#pymavlink) se te da una explicación más detallada de la librería) .
+**_pymavlink_** (recuerda que en la [sección _3. Herramientas_](#installs) se te da una explicación más detallada de la librería) .
 
 [VIDEO] (Demo de la etapa 1)
 
@@ -624,7 +624,7 @@ Config -> _Full parameter list_).
 
 Este vídeo contiene una explicación del código de esta versión y una demostración de la
 aplicación en funcionamiento. Fíjate que para ejecutar el código tendrás que instalar la librería
-**tkintermapview**.
+[**tkintermapview**](#installs).
 
 [VIDEO] Demo etapa 2.A
 
@@ -666,7 +666,7 @@ vuelo (como un pictionary que podría ver los extraterrestres)
 
 ---
 
-## Etapa 2.B
+## Etapa 2.B: Control del dron mediante poses
 
 Puede encontrarse etiquetada con “**v2.B.1**”. Esta etapa puede realizarse inmediatamente
 después de la etapa 1 (**no se necesita el código desarrollado en la etapa 2.A**).
@@ -677,7 +677,7 @@ la cámara de su portátil el dron realizará la operación asociada a la pose (
 hacia el norte). **En la versión inicial hay tres poses implementadas y el reto es implementar
 otras tres**.
 
-Para implementar esta funcionalidad se ha usado la librería _mediapipe_ (**que hay que instalar**).
+Para implementar esta funcionalidad se ha usado la librería [_mediapipe_](#installs) (**que hay que instalar**).
 Esta librería tiene una función a la que **se le pasa la imagen de un cuerpo e identifica en ese
 cuerpo un total de 32 puntos clave** (landmarks). La función nos devuelve una lista con las
 coordenadas de cada uno de esos puntos clave, asumiendo que la imagen es un espacio de **2D
