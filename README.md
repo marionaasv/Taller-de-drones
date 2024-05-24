@@ -618,6 +618,10 @@ quedarse parado en ese límite (fíjate ya de paso en la manera de cambiar cualq
 muchos parámetros que tiene el dron, y que puedes listar desde Mission Planner clicando en
 Config --> Full parameter list).
 
+<p>
+  <img src="geofence.jpg" width="70%"/>
+</p>
+
 Este vídeo contiene una explicación del código de esta versión y una demostración de la
 aplicación en funcionamiento. Fíjate que para ejecutar el código tendrás que instalar la librería
 **tkintermapview**.
