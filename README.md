@@ -616,7 +616,7 @@ dron para que establezca el geofence. Finalmente, es necesario **activar el geof
 qué acción debe hacer el dron si llega al límite del greofence**, que es nuestra aplicación será
 quedarse parado en ese límite (fíjate ya de paso en la manera de cambiar cualquiera de los
 muchos parámetros que tiene el dron, y que puedes listar desde Mission Planner clicando en
-Config --> Full parameter list).
+Config -> _Full parameter list_).
 
 <p>
   <img src="geofence.jpg" width="70%"/>
@@ -626,3 +626,61 @@ Este vídeo contiene una explicación del código de esta versión y una demostr
 aplicación en funcionamiento. Fíjate que para ejecutar el código tendrás que instalar la librería
 **tkintermapview**.
 
+[VIDEO] Demo etapa 2.A
+
+---
+
+### Retos
+
+Los retos que te proponemos ahora no van a ser tan sencillo como los de la versión anterior.
+Los encontrarás resueltos en la versión etiquetada con “**V.2.A.2**”.
+
+- **Reto 1**: Introduce los elementos necesarios para poder **marcar un punto en el mapa** y hacer
+**que el dron vuele hasta ese punto**. Para implementar esta funcionalidad necesitarás la función
+_goto_ de la librería.
+
+- **Reto 2**: Introduce los elementos necesarios para que **al clicar un botón se dibuje en el mapa el
+rastro que deja el dron en su movimiento**. Ese botón debe servir para **activar** el rastro y para
+**borrarlo**.
+
+### Más retos: 
+
+La lista de cosas que se pueden hacer es esta versión es infinita. Te proponemos algunos retos
+(en muchos casos tendrás que investigar qué parámetros del dron hay que modificar):
+
+1. Investiga cómo hacer para que la acción que realice el dron al **llegar al límite del
+geofence sea un RTL** (retornar a casa)
+
+2. El geofence no sólo tiene perímetro. También tiene **altura**. Si haces despegar el dron a
+una altura superior a la que tiene el geofence se producirá un error y no despegará.
+Introduce los elementos necesarios para poder **definir la altura que debe tener el
+geofence**.
+
+3. Cambia lo necesario para ver volar el dron sobre el césped del **Nou Camp**.
+
+4. Introduce un botón que permita **activar o desactivar el geofence**, según convenga.
+
+5. Modifica la función de dibujar el rastro para que puedas **activar o desactivar** **(no
+borrar**) el dibujo del rastro. De esta manera podrás hacer dibujos sobre el área de
+vuelo (como un pictionary que podría ver los extraterrestres)
+
+---
+
+## Etapa 2.B
+
+Puede encontrarse etiquetada con “**v2.B.1**”. Esta etapa puede realizarse inmediatamente
+después de la etapa 1 (**no se necesita el código desarrollado en la etapa 2.A**).
+
+En la versión inicial se ha incluido un botón que abre una ventana en la que se muestran
+**diferentes poses del cuerpo** de manera que si el usuario hace alguna de esas poses delante de
+la cámara de su portátil el dron realizará la operación asociada a la pose (por ejemplo, volar
+hacia el norte). **En la versión inicial hay tres poses implementadas y el reto es implementar
+otras tres**.
+
+Para implementar esta funcionalidad se ha usado la librería _mediapipe_ (**que hay que instalar**).
+Esta librería tiene una función a la que **se le pasa la imagen de un cuerpo e identifica en ese
+cuerpo un total de 32 puntos clave** (landmarks). La función nos devuelve una lista con las
+coordenadas de cada uno de esos puntos clave, asumiendo que la imagen es un espacio de **2D
+en el que la coordenada x (eje horizontal) va de 0 a 1 y la coordenada y (eje vertical) va de 0 a
+1**. De esta forma, la **esquina superior izquierda** tiene la coordenada **(0,0)** y la **inferior derecha**
+tiene la coordenada **(1,1)**.
