@@ -42,7 +42,7 @@ UPC, en Castelldefels**.
 Mira este vídeo para ver una demo de la aplicación que se desarrolla en este taller.
 
   <a href="https://www.youtube.com/watch?v=P_NCKA_3-PQ">, <a href="https://www.youtube.com/watch?v=UPyklN9namM">
-    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="Vista previa del video">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="Vista previa del video">
+    <img src="https://img.youtube.com/vi/P_NCKA_3-PQ/0.jpg" width="250" alt="">, <img src="https://img.youtube.com/vi/UPyklN9namM/0.jpg" width="250" alt="">
   </a>
 
 
@@ -76,12 +76,12 @@ ambiciosos que esperamos que despierten tu interés.
 
 Para realizar el taller necesitarás instalar en tu ordenador las herramientas siguientes:
 
-**- Git:** Es una herramienta muy popular para la gestión de versiones. Con esta herramienta
+- **Git:** Es una herramienta muy popular para la gestión de versiones. Con esta herramienta
 podrás instalar en tu ordenador (clonar) este repositorio y acceder a los códigos de las
 diferentes etapas.<br />
 https://git-scm.com/downloads
 
-**- Mission Planner:** Es una aplicación de escritorio que **permite interactuar con el dron**. Por
+- **Mission Planner:** Es una aplicación de escritorio que **permite interactuar con el dron**. Por
 ejemplo, permite configurar muchos parámetros del dron y darle ordenes típicas (armar,
 despegar, volar a un punto dado, etc.). Mission Planner permite también poner en marcha un
 **simulador del dron**, que llamaremos **SITL** (Software In The Loop). Tanto Mission Planner como
@@ -95,12 +95,13 @@ https://ardupilot.org/planner/docs/mission-planner-installation.html
   <img src="mp.png" width="70%"/>
 </p>
 <a id="installs"></a>
-**- PyCharm:** Se trata de la aplicación más popular para el desarrollo de código en Python.
+
+- **PyCharm:** Se trata de la aplicación más popular para el desarrollo de código en Python.
 Asegurate de instalar la versión denominada Community Edition, que es gratuita y más que
 suficiente.<br />
 https://www.jetbrains.com/pycharm/
 
-**- Python:** Necesitarás un intérprete de Python. Puedes utilizar las versiones más actuales.<br />
+- **Python:** Necesitarás un intérprete de Python. Puedes utilizar las versiones más actuales.<br />
 https://www.python.org/downloads/
 
 Además, durante el taller tendrás que instalar en el entorno de desarrollo creado por Pycharm
@@ -117,12 +118,12 @@ import mediapipe as mp
 
 Dónde: 
 
-**- _Pymavlink:_** contiene una gran variedad de funciones que permiten controlar el dron
+- **_Pymavlink:_** contiene una gran variedad de funciones que permiten controlar el dron
 desde código en Python. 
 
-**- _TkinterMapView:_** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
+- **_TkinterMapView:_** widget para la librería Tkinter que permite la visualización y manipulación interactiva de mapas basados en mosaicos. Se usará en la rama **mapa** del proyecto.
 
-**- _Mediapipe:_** tiene una variedad de funciones para procesar imágenes. Es la librería que
+- **_Mediapipe:_** tiene una variedad de funciones para procesar imágenes. Es la librería que
 usaremos para detectar **poses** del cuerpo.
 
 
